@@ -4,6 +4,7 @@
 “The Heist” is an AI adaption of a game “Stolen in 60 seconds”. It’s a burglary game where the AI needs to carefully plan and execute each robbery.
 The Agent has to carry out a successful robbery and escape within the given time limit.
 
+![MenuScreen](https://github.com/prasadchelsea33/The-Heist/blob/master/GIFS/MenuScreen.PNG)
 ##### Instructions:
 The project consists of two modes of operation first being the already trained models and, another the training phase which has to be accessed by the user by opening the project in Unity.
 
@@ -32,8 +33,6 @@ _Note_: the trained model for the agent is stored as a text file in models direc
 3. Every training overwrites the old trained model
 4. The agents find an optimal path pretty quickly on the easy map (in around 15 to 25 trails) and over-training the agent leads to unexpected behavior sometimes
 
-#####The game consists of following components:
-
 #### Agent
 The agent performs the actions and can be trained using different algorithms like Q-learning or SARSA or it can use the decision tree algorithm.
 
@@ -41,6 +40,12 @@ The agent has 4 different personalities which are as follows:
 
 #### _Tactical agent_
  This model works on the decision tree move finder algorithm. It efficiently completes both Easy and Hard levels without prior level knowledge as it is basically a hard-coded agent.
+ 
+ _Tactical Agent working on Easy Level_
+ ![Tactical Agent working on Easy Level](https://github.com/prasadchelsea33/The-Heist/blob/master/GIFS/EasyTactical.gif)
+
+_Tactical Agent working on Hard Level_
+![Tactical Agent working on Hard Level](https://github.com/prasadchelsea33/The-Heist/blob/master/GIFS/HardTactical.gif)
 
 **Expected Behavior**:
 
@@ -78,6 +83,9 @@ The agent has 4 different personalities which are as follows:
 #### _Naive agent_
 Uses Q-Learning and is a Naive agent.This model is short-sighted as it has a small gamma value of 0.1. It’s the most innocent agent who is looting for the first time therefore doesn’t exchange less value goods for higher valued ones.
 
+_Naive agent working on Easy Level_
+![Naive agent working on Easy Level](https://github.com/prasadchelsea33/The-Heist/blob/master/GIFS/EasyNaive.gif)
+
 **Expected Behavior**:
 
 * Visit all the treasures once
@@ -110,6 +118,9 @@ Uses Q-Learning and is a Naive agent.This model is short-sighted as it has a sma
 
 #### _Smart agent_
 Uses Q-Learning and is the smartest agent. This agent has a slight touch of cunningness because it always exchanges loot for a better loot when it doesn’t have capacity for the new loot. But it doesn't avoid cameras.
+
+_Smart agent working on Easy Level_
+![Smart agent working on Easy Level](https://github.com/prasadchelsea33/The-Heist/blob/master/GIFS/EasySmart.gif)
 
 **Expected Behavior**:
 
@@ -145,6 +156,9 @@ Uses Q-Learning and is the smartest agent. This agent has a slight touch of cunn
 
 #### _Safe agent_
 Uses SARSA algo and is the safest agent. It doesn't take risk of getting detected. It even goes to the exit when the weight crosses the threshold of 65%. It always fears cameras while looting and hence will never go in front of one. It exchanges less value goods for higher valued ones.
+
+_Safe agent working on Easy level_
+![Safe agent working on Easy level](https://github.com/prasadchelsea33/The-Heist/blob/master/GIFS/EasySafe.gif)
 
 **Expected Behavior**:
 
