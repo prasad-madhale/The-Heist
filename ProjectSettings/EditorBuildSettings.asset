@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/ChooseLevel.unity
+    guid: c8b6f1e01024740aca8015cb90104c62
+  - enabled: 1
+    path: Assets/Scenes/EasyLevel.unity
+    guid: 6ad68e3175b77984b88a6ad51351e8bc
+  - enabled: 1
+    path: Assets/Scenes/HardLevel.unity
+    guid: aec689d538b9242899b5d9a59770f5b1
