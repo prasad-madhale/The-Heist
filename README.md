@@ -5,10 +5,11 @@
 The Agent has to carry out a successful robbery and escape within the given time limit.
 
 ![MenuScreen](https://github.com/prasadchelsea33/The-Heist/blob/master/GIFS/MenuScreen.PNG)
-##### Instructions:
+
+#### Instructions:
 The project consists of two modes of operation first being the already trained models and, another the training phase which has to be accessed by the user by opening the project in Unity.
 
-_Instructions to run the pre-trained models in Unity_:
+_**Instructions to run the pre-trained models in Unity**_:
 
 1. Clone the project
 2. Open Unity, choose open a project option and open the cloned project
@@ -16,7 +17,7 @@ _Instructions to run the pre-trained models in Unity_:
 4. Once in the scene select the map(Easy/Hard) and agent persona(Tactical/Naive/Smart/Safe) you want to run
 5. Once in the game you can exit to the ChooseLevel scene at anytime using the ‘Esc’ key
 
-_Instructions to train the models in Unity:_
+_**Instructions to train the models in Unity:**_
 
 1. Follow steps 1 and 2 as mentioned above
 2. Open the ‘EasyLevel’ or ‘HardLevel’ scene depending upon your choice of the
@@ -25,20 +26,20 @@ map and select the ‘agent’ object from the hierarchy that appears to the lef
 4. Then find the Training field which is situated below the agent_type field. Set the training field to True. (Very important step)
 5. Hit play to observe the agent training in the selected map
 
-_Note_: the trained model for the agent is stored as a text file in models directory and the agents performance measure is stored in the 'training_info' folder
+_**Note**_: the trained model for the agent is stored as a text file in models directory and the agents performance measure is stored in the 'training_info' folder
 
-##### Important points to remember:
+#### Important points to remember:
 1. The agents are only trained on the EasyLevel
 2. When agents are run on the Hardlevels they use only the data that they gathered on the easy levels
 3. Every training overwrites the old trained model
 4. The agents find an optimal path pretty quickly on the easy map (in around 15 to 25 trails) and over-training the agent leads to unexpected behavior sometimes
 
-#### Agent
+## Agent
 The agent performs the actions and can be trained using different algorithms like Q-learning or SARSA or it can use the decision tree algorithm.
 
-The agent has 4 different personalities which are as follows:
+**The agent has 4 different personalities which are as follows:**
 
-#### _Tactical agent_
+### _Tactical agent_
  This model works on the decision tree move finder algorithm. It efficiently completes both Easy and Hard levels without prior level knowledge as it is basically a hard-coded agent.
  
  _Tactical Agent working on Easy Level_
@@ -47,29 +48,9 @@ The agent has 4 different personalities which are as follows:
 _Tactical Agent working on Hard Level_
 ![Tactical Agent working on Hard Level](https://github.com/prasadchelsea33/The-Heist/blob/master/GIFS/HardTactical.gif)
 
-**Expected Behavior**:
-
-* Visit all the treasures once
-* Go to exit when the Agent’s capacity is full
-* Avoid Camera’s at all cost
-* Pick up new loot whenever possible
-* Exchange Loot: Give away less valuable loot for a more valuable loot
-* Flee when all the loot is collected
-* Flee when time remaining is less
-
 **Trained On**: Doesn’t require training
 
 **Tested On**: Easy and Hard Levels
-
-**Observed Behavior on Easy Level**:
-
-* Visited all the treasures once
-* Looted all the treasures
-* Went to exit when the Agent’s capacity was full
-* Avoided Camera’s at all cost
-* Picked up new loot whenever possible
-* Exchanged Loot: Gave away less valuable loot for a more valuable loot
-* Flee when all the loot was collected
 
 **Observed Behavior on Hard Level**:
 
@@ -80,32 +61,15 @@ _Tactical Agent working on Hard Level_
 * Picked up new loot whenever possible
 * Flee when all the loot was collected
 
-#### _Naive agent_
+### _Naive agent_
 Uses Q-Learning and is a Naive agent.This model is short-sighted as it has a small gamma value of 0.1. It’s the most innocent agent who is looting for the first time therefore doesn’t exchange less value goods for higher valued ones.
 
 _Naive agent working on Easy Level_
 ![Naive agent working on Easy Level](https://github.com/prasadchelsea33/The-Heist/blob/master/GIFS/EasyNaive.gif)
 
-**Expected Behavior**:
-
-* Visit all the treasures once
-* Go to exit when the Agent’s capacity is full
-* Pick up new loot whenever possible
-* Flee when all the loot is collected
-* Flee when time remaining is less
-
 **Trained On**: Trained on easy level
 
 **Tested On**: Easy and Hard Levels
-
-**Observed Behavior on Easy Level**:
-
-* Visited all the treasures once
-* Looted all the treasures
-* Went to exit when the Agent’s capacity was full
-* Went in front of camera to receive 10 second penalty
-* Picked up new loot whenever possible
-* Flee when all the loot was collected
 
 **Observed Behavior on Hard Level**:
 
@@ -116,34 +80,15 @@ _Naive agent working on Easy Level_
 * Picked up new loot whenever possible
 * Could not flee before the timer was up
 
-#### _Smart agent_
+### _Smart agent_
 Uses Q-Learning and is the smartest agent. This agent has a slight touch of cunningness because it always exchanges loot for a better loot when it doesn’t have capacity for the new loot. But it doesn't avoid cameras.
 
 _Smart agent working on Easy Level_
 ![Smart agent working on Easy Level](https://github.com/prasadchelsea33/The-Heist/blob/master/GIFS/EasySmart.gif)
 
-**Expected Behavior**:
-
-* Visit all the treasures once
-* Go to exit when the Agent’s capacity is full
-* Pick up new loot whenever possible
-* Exchange Loot: Give away less valuable loot for a more valuable loot
-* Flee when all the loot is collected
-* Flee when time remaining is less
-
 **Trained On**: Trained on easy level
 
 **Tested On**: Easy and Hard Levels
-
-**Observed Behavior on Easy Level**:
-
-* Visited all the treasures once
-* Looted all the treasures
-* Went to exit when the Agent’s capacity was full
-* Went in front of camera to receive 10 second penalty
-* Picked up new loot whenever possible
-* Exchanged Loot: Gave away less valuable loot for a more valuable loot
-* Flee when all the loot was collected
 
 **Observed Behavior on Hard Level**:
 
@@ -154,35 +99,15 @@ _Smart agent working on Easy Level_
 * Picked up new loot whenever possible
 * Could not flee before the timer was up
 
-#### _Safe agent_
+### _Safe agent_
 Uses SARSA algo and is the safest agent. It doesn't take risk of getting detected. It even goes to the exit when the weight crosses the threshold of 65%. It always fears cameras while looting and hence will never go in front of one. It exchanges less value goods for higher valued ones.
 
 _Safe agent working on Easy level_
 ![Safe agent working on Easy level](https://github.com/prasadchelsea33/The-Heist/blob/master/GIFS/EasySafe.gif)
 
-**Expected Behavior**:
-
-* Visit all the treasures once
-* Go to exit when the Agent’s capacity is full
-* Avoid Camera’s at all cost
-* Pick up new loot whenever possible
-* Exchange Loot: Give away less valuable loot for a more valuable loot
-* Flee when all the loot is collected
-* Flee when time remaining is less
-
 **Trained On**: Trained on easy level
 
 **Tested On**: Easy and Hard Levels
-
-**Observed Behavior on Easy Level**:
-
-* Visited all the treasures once
-* Looted all the treasures
-* Went to exit when the Agent’s capacity was full
-* Avoided Camera’s at all cost
-* Picked up new loot whenever possible
-* Exchanged Loot: Gave away less valuable loot for a more valuable loot
-* Flee when all the loot was collected
 
 **Observed Behavior on Hard Level**:
 
@@ -193,11 +118,11 @@ _Safe agent working on Easy level_
 * Picked up new loot whenever possible
 * Could not flee before the timer was up
 
-#### A* for pathfinding:
+### A* for pathfinding:
 The agent uses A* algorithm for pathfinding. A* uses a heuristic function in order to figure out the path, for this game we use Euclidean distance as the heuristic function for the A* algorithm.
 
 
-#### Q-Learning / SARSA details:
+### Q-Learning / SARSA details:
 
 **Possible Moves**: 6
 
@@ -205,9 +130,9 @@ The agent uses A* algorithm for pathfinding. A* uses a heuristic function in ord
 
 **Total Q-Points**: 3072
 
-#####MOVES:
+#### MOVES:
 
-We have defined 6 moves for any given agent:
+*We have defined 6 moves for any given agent:*
 
 1. _**GO TO TARGET**_ -
 This move will take the player to next available treasure and will also make the
@@ -234,7 +159,7 @@ Tactical and Safe Agents usually try to avoid cameras in order to get more time.
 
 #### States in Q-Learning and SARSA:
 
-Any agent will be in a combination of following 9 states:
+*Any agent will be in a combination of following 9 states:*
 
 1. _**WEIGHT STATE**_ -
 This state returns 1 if the capacity of the Heist is full, otherwise it will return zero.
